@@ -1,0 +1,137 @@
+.t-supervisor-container {
+  color: black;
+  width: 100%;
+  /* margin-top: 100px; */
+  flex-direction: column;
+  /* padding:200px; */
+  box-sizing: border-box;
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-around;
+  background: #fcf6f6;
+  gap:10px;
+  align-items: center;
+  height:100%;
+}
+.t-supervisor-note {
+  color: black;
+  margin-top: 50px;
+  display: block;
+  text-align: center;
+  font-size: 10px;
+}
+.t-supervisor-first{
+  /* flex:1; */
+  display:flex;
+  flex-direction: row;
+  margin-top: 50px;
+  gap:20px;
+  flex-wrap: wrap;
+  width:96%;
+  /* height:50%; */
+}
+
+.t-supervisor-first div{
+  /* width: 350px; */
+  /* margin:0.2%; */
+  flex:1;
+}
+
+.t-card {
+  width: 400px;
+  height: 225px;
+  background-color: #ffffff;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  max-width: 600px;
+  margin: auto;
+}
+
+.t-supervisorfeedback{
+  width: 100%;
+  flex:1;
+}
+.t-supervisorfeedback h3{
+  font-size: 1.5em;
+  /* margin:auto; */
+  text-align: center;
+  position: sticky;
+}
+.t-supervisorfeedback {
+  /* margin:20px; */
+  padding: 20px;
+  /* max-height:150px; */
+  max-width:95%;
+  max-height: min-content;
+  overflow-y: scroll; /* Enables scrolling when content overflows */
+}
+
+
+
+.feedback-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.feedback-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.feedback-left,
+.feedback-right {
+  width: 45%;
+}
+
+.feedback-left p,
+.feedback-right p {
+  margin: 5px 0;
+}
+
+.feedback-item p {
+  font-size: 1.3em;
+  text-wrap: wrap;
+}
+
+
+.t-supervisor-reportstatus{
+  /* overflow-y: scroll; */
+}
+
+.t-supervisor-reportstatus {
+  /* padding: 20px; */
+}
+
+.report-list {
+  max-height: 150px; /* Adjust this to the height you want */
+  overflow-y: auto; /* Make it scrollable when content overflows */
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.report-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.report-item:last-child {
+  border-bottom: none; /* Remove border from last item */
+}
+
+.report-item p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.report-item strong {
+  font-weight: bold;
+}
+

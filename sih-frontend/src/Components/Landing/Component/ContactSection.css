@@ -1,0 +1,203 @@
+/* Contact Page Container */
+.landing-contact-section-class {
+  padding: 50px;
+  background: #f5faff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+  box-sizing: border-box;
+  position: relative; /* Establishes stacking context for particles */
+  overflow: hidden;
+}
+
+/* Particle Animation - Positioned behind content */
+.landing-contact-section-class::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 1%, rgba(0, 123, 255, 0) 50%);
+  pointer-events: none; /* Allows interaction with elements above */
+  animation: particleFloat 10s infinite ease-in-out, particleExpand 3s infinite ease-in-out;
+  z-index: 0; /* Keeps particles behind the content */
+}
+
+/* Particle Animation Effects */
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-50px) translateX(50px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes particleExpand {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Contact Form Container */
+.landing-contact-form-container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #f5faff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  animation: fadeIn 1s ease-out;
+  z-index: 1; /* Ensures form content stays above particles */
+}
+
+/* Hover Shadow Effect */
+.landing-contact-form-container:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Contact Form Heading */
+.landing-contact-form-container h1 {
+  font-size: 38px;
+  color: #4e73df;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Contact Form */
+.landing-contact-form-class {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Input Fields */
+.landing-contact-form-class input,
+.landing-contact-form-class textarea {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.3s ease, background-color 0.3s ease;
+  background-color: #f8f8f8;
+  margin: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.landing-contact-form-class input:focus,
+.landing-contact-form-class textarea:focus {
+  border: 1px solid #4e73df;
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Submit Button */
+.landing-contact-form-class button {
+  padding: 16px 32px;
+  background-color: #4e73df;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.landing-contact-form-class button:hover {
+  background-color: #3e63b0;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Details */
+.landing-contact-details {
+  margin-top: 60px;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.landing-contact-details p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.landing-contact-details a {
+  color: #4e73df;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.landing-contact-details a:hover {
+  text-decoration: underline;
+  color: #2a47a7;
+}
+
+/* Additional Customizations - Last Line */
+.landing-contact-details .last-line {
+  font-size: 16px;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .landing-contact-form-container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .landing-contact-form-container h1 {
+    font-size: 32px;
+  }
+
+  .landing-contact-form-class button {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+
+  .landing-contact-details p {
+    font-size: 14px;
+  }
+
+  .landing-contact-details a {
+    font-size: 14px;
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

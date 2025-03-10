@@ -1,0 +1,176 @@
+
+/* Hamburger Icon Styling */
+.patient-hamburger {
+    display: flex; /* Hidden by default; visible only below 750px */
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px;
+    position: fixed;
+    z-index: 1100;
+    top: 10px;
+    left: 10px;
+}
+
+.patient-bar {
+    height: 4px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 2px;
+	background-color: #111;
+    transition: 0.3s;
+}
+
+/* Sidebar Styling */
+.patient-sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #111;
+    color: white;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.patient-sidebar.patient-open {
+    left: 0;
+}
+
+.patient-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.patient-sidebar li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.patient-sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+}
+
+.patient-sidebar a:hover {
+    color: #f1f1f1;
+}
+
+/* Close Button */
+.patient-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+.patient-close-btn:hover {
+    color: #f1f1f1;
+}
+
+/* Content Styling */
+.patient-content {
+    flex: 1;
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.patient-app-container.patient-sidebar-open .patient-content {
+    margin-left: 250px; /* Push content to accommodate sidebar width */
+}
+
+.patient-Menu:hover{
+	background-color: #444;
+		color: white;
+}
+.notification-Menu:hover{
+    background-color: #444;
+    color: white;
+}
+.notification-Menuactive:hover{
+    background-color: #444;
+    color: white;
+}
+.notification-Menuactive{
+    background-color: #444;
+    display:flex;
+    justify-content: space-between;
+}
+/* Active Menu Styling */
+.patient-Menuactive {
+    background-color: #444;
+    color: white;
+}
+.count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    color: white; 
+    font-size: 12px;
+    font-weight: bold; 
+    border-radius: 50%;
+    width: 20px; 
+    height: 20px;
+    min-width: 20px;
+    padding: 2px; 
+    margin-left: 8px; 
+}
+.notification-Menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Inactive Menu Styling */
+.patient-Menuinactive {
+    pointer-events: none;
+    color: #666;
+}
+
+.patient-Menuinactive a {
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* Responsive Dropdown Styles */
+@media (max-width: 750px) {
+    .patient-hamburger {
+        display: flex; /* Show hamburger icon */
+    }
+
+    .patient-sidebar {
+        left: -100%; /* Hidden off-screen */
+    }
+
+    .patient-sidebar.patient-open {
+        left: 0; /* Slide in from the left */
+    }
+
+    .patient-app-container.patient-sidebar-open .patient-content {
+        margin-left: 0; /* Content remains static on small screens */
+    }
+
+    .patient-sidebar li {
+        padding: 15px;
+    }
+
+    .patient-sidebar a {
+        font-size: 16px;
+    }
+}

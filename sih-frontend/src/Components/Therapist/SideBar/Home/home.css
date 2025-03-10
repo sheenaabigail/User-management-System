@@ -1,0 +1,51 @@
+.t-todolist-container {
+    flex: 1;
+    padding: 20px;
+    /* max-width: 300px; */
+    max-height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    overflow: scroll;
+}
+
+.t-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.t-todolist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.t-card-todo {
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.t-card.completed {
+    background-color: #e6ffe6;
+    text-decoration: line-through;
+}
+
+.t-card label {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+

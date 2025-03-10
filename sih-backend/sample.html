@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Retrieval and Upload</title>
+</head>
+<body>
+
+    <h1>File Upload and Retrieval Test</h1>
+
+    <!-- File Upload Section -->
+    <h2>Upload File</h2>
+    <input type="file" id="fileInput">
+    <input type="text" id="therapistId" placeholder="Enter Therapist ID">
+    <button onclick="uploadFile()">Upload File</button>
+
+    <hr>
+
+    <!-- File Retrieval Section -->
+    <h2>Retrieve File</h2>
+    <input type="text" id="fileId" placeholder="Enter File ID to Retrieve">
+    <button onclick="getFile()">Get File</button>
+
+    <div id="fileViewer">
+        <!-- File will be displayed here -->
+    </div>
+
+    <script>
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const therapistId = document.getElementById('therapistId').value;
+
+            // Check if file and therapistId are provided
+            if (!fileInput.files.length) {
+                alert('Please select a file to upload.');
+                return;
+            }
+            if (!therapistId) {
+                alert('Please enter a Therapist ID.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('therapistId', therapistId);
+
+            try {
+                const response = await fetch('http://localhost:5000/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert('File uploaded successfully with ID: ' + data.fileId);
+                } else {
+                    const errorData = await response.json();
+                    alert('Error uploading file: ' + errorData.error);
+                }
+            } catch (error) {
+                console.error('Error uploading file:', error);
+                alert('Error uploading file');
+            }
+        }
+
+        async function getFile() {
+            const fileId = document.getElementById('fileId').value;
+            if (!fileId) {
+                alert('Please enter a file ID');
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:5000/api/file/${fileId}`);
+
+                if (!response.ok) {
+                    alert('File not found or error occurred!');
+                    return;
+                }
+
+                const contentType = response.headers.get('Content-Type');
+
+                if (contentType.includes('video')) {
+                    // If the file is a video, embed it in a video player
+                    const videoElement = document.createElement('video');
+                    videoElement.controls = true;
+                    videoElement.src = URL.createObjectURL(await response.blob());
+                    document.getElementById('fileViewer').innerHTML = '';
+                    document.getElementById('fileViewer').appendChild(videoElement);
+                } else if (contentType.includes('pdf')) {
+                    // If the file is a PDF, display it
+                    const iframe = document.createElement('iframe');
+                    iframe.src = URL.createObjectURL(await response.blob());
+                    iframe.width = '100%';
+                    iframe.height = '500px';
+                    document.getElementById('fileViewer').innerHTML = '';
+                    document.getElementById('fileViewer').appendChild(iframe);
+                } else {
+                    alert('Unsupported file type');
+                }
+            } catch (error) {
+                console.error('Error fetching file:', error);
+                alert('Error fetching file');
+            }
+        }
+    </script>
+
+</body>
+</html>

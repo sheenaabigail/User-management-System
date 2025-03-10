@@ -1,0 +1,18 @@
+.t-calendar{
+    color:black;
+    margin-top: 10%;
+}
+.calendar_default_main > div:nth-child(2) {
+    overflow: visible !important;
+  }
+  .navigator_default_month {
+    display:grid;
+    gap:10px;
+    margin-top:12%;
+
+  }
+  .navigator_default_month {
+    grid-row: 1;
+
+  }
+  

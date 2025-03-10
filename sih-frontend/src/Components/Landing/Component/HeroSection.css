@@ -1,0 +1,153 @@
+/* Hero Section Styles */
+.landing-hero-section-class { 
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+  min-height: 90vh;
+  padding: 90px;
+  padding-left: 10%;
+  background-color: #f5faff;
+  position: relative; /* Establishes stacking context for particles */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Particle Animation - Positioned behind content */
+.landing-hero-section-class::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #97c5f3;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 1%, rgba(0, 123, 255, 0) 50%);
+  pointer-events: none; /* Allows interaction with elements above */
+  animation: particleFloat 5s infinite ease-out, particleExpand 3s infinite ease-in-out;
+  z-index: 3; 
+}
+
+/* Particle Animation Effects */
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-50px) translateX(50px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes particleExpand {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Text Styling */
+.landing-hero-section-class-text {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  text-align: left;
+  color: #003b73;
+  z-index: 1; /* Ensures text appears above particles */
+}
+
+.landing-hero-section-class-text h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.landing-hero-section-class-text p {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.landing-hero-section-class-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.landing-hero-section-class-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Image Styling */
+.landing-hero-section-class-image {
+  width: 40%;
+  height: 100%;
+  padding: 5%;
+  margin: 5%;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  z-index: 1; /* Keeps image above the particles */
+}
+
+.landing-hero-section-class-image img {
+  max-width: 100%;
+  height: 50%; /* Prevents overflow */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.landing-hero-section-class-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .landing-hero-section-class {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .landing-hero-section-class-text {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .landing-hero-section-class-btn {
+    margin-top: 20px;
+  }
+
+  .landing-hero-section-class-image img {
+    max-width: 80%;
+  }
+
+  .landing-hero-section-class-text h1 {
+    font-size: 30px;
+    max-width: 90%;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+}

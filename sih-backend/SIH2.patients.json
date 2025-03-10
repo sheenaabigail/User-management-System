@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "phone": "123-456-7890",
+    "age": 30,
+    "gender": "Female",
+    "goals": "Improve mental well-being",
+    "password": "securepassword1",
+    "therapistId": "64b5c62e96a4f918a54d12e4",
+    "language": ["English", "Spanish"],
+    "specializationNeeded": "Cognitive Behavioral Therapy",
+    "status": "active",
+    "terminationReason": null,
+    "transferHistory": [],
+    "exercises": ["Deep breathing", "Mindfulness meditation"],
+    "noOfSessions": 3,
+    "sessionLogs": [
+      {
+        "sessionId": "64b5c62e96a4f918a54d12e5",
+        "therapistId": "64b5c62e96a4f918a54d12e4",
+        "sessionNotes": ["Discussed stress management techniques"],
+        "sessionDate": "2024-12-01"
+      }
+    ]
+  },
+  {
+    "name": "Bob Smith",
+    "email": "bob.smith@example.com",
+    "phone": "987-654-3210",
+    "age": 45,
+    "gender": "Male",
+    "goals": "Overcome anxiety",
+    "password": "securepassword2",
+    "therapistId": "64b5c62e96a4f918a54d12e6",
+    "language": ["English"],
+    "specializationNeeded": "Exposure Therapy",
+    "status": "active",
+    "terminationReason": null,
+    "transferHistory": [
+      {
+        "fromTherapistId": "64b5c62e96a4f918a54d12e7",
+        "toTherapistId": "64b5c62e96a4f918a54d12e6",
+        "dateOfTransfer": "2024-11-20"
+      }
+    ],
+    "exercises": ["Progressive muscle relaxation"],
+    "noOfSessions": 5,
+    "sessionLogs": [
+      {
+        "sessionId": "64b5c62e96a4f918a54d12e8",
+        "therapistId": "64b5c62e96a4f918a54d12e6",
+        "sessionNotes": ["Worked on exposure hierarchy"],
+        "sessionDate": "2024-11-25"
+      }
+    ]
+  },
+  {
+    "name": "Charlie Brown",
+    "email": "charlie.brown@example.com",
+    "phone": "456-123-7890",
+    "age": 28,
+    "gender": "Non-binary",
+    "goals": "Improve self-confidence",
+    "password": "securepassword3",
+    "therapistId": "64b5c62e96a4f918a54d12e9",
+    "language": ["English", "French"],
+    "specializationNeeded": "Positive Psychology",
+    "status": "active",
+    "terminationReason": null,
+    "transferHistory": [],
+    "exercises": ["Affirmation journaling", "Gratitude exercises"],
+    "noOfSessions": 2,
+    "sessionLogs": [
+      {
+        "sessionId": "64b5c62e96a4f918a54d12f0",
+        "therapistId": "64b5c62e96a4f918a54d12e9",
+        "sessionNotes": ["Focused on strengths identification"],
+        "sessionDate": "2024-12-03"
+      }
+    ]
+  },
+  {
+    "name": "Diana Prince",
+    "email": "diana.prince@example.com",
+    "phone": "789-321-4560",
+    "age": 35,
+    "gender": "Female",
+    "goals": "Develop coping strategies",
+    "password": "securepassword4",
+    "therapistId": "64b5c62e96a4f918a54d12f1",
+    "language": ["English", "German"],
+    "specializationNeeded": "Dialectical Behavioral Therapy",
+    "status": "terminated",
+    "terminationReason": "Client achieved therapy goals",
+    "transferHistory": [
+      {
+        "fromTherapistId": "64b5c62e96a4f918a54d12f2",
+        "toTherapistId": "64b5c62e96a4f918a54d12f1",
+        "dateOfTransfer": "2024-10-15"
+      }
+    ],
+    "exercises": ["Interpersonal effectiveness skills", "Distress tolerance techniques"],
+    "noOfSessions": 10,
+    "sessionLogs": [
+      {
+        "sessionId": "64b5c62e96a4f918a54d12f3",
+        "therapistId": "64b5c62e96a4f918a54d12f1",
+        "sessionNotes": ["Reviewed progress and termination plan"],
+        "sessionDate": "2024-11-28"
+      }
+    ]
+  }
+]
